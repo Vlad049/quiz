@@ -18,7 +18,8 @@ def index():
 @app.get("/poll/")
 def poll():
     question = "Яка піцца тобі подобаєтсья найбільше"
-    answers = ["Пепероні", "Класична"]
+    with Session() as session:
+        answers = session.query(Pizza).all()
     return render_template("poll.html", question=question, answers=answers)
 
 

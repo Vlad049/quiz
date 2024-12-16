@@ -5,8 +5,8 @@
     <h3><em>{{ question }}</em></h3>
     {%for answer in answers%}
     <div class="form-check">
-        <input type="radio" name="vote" value="{{ answer }}" class="form-check-input">
-        <label class="form-check-label">{{ answer }}</label>
+        <input type="radio" name="vote" value="{{ answer.name }}" class="form-check-input">
+        <label class="form-check-label">{{ answer.name }}</label>
     </div>
     {%endfor%}
     <button type="submit" class="btn btn-success">Проголосувати</button>
